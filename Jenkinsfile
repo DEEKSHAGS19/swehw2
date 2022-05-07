@@ -6,7 +6,7 @@ pipeline {
 					script {
 						checkout scm
 						sh 'rm -rf *.war'
-						sh 'jar -cvf Ishana_SWE_HW1.war -C WebContent/ .'
+						sh 'jar -cvf Ishana_SWE_HW1.war -C Ishana_SWE_HW1/src/main/webapp/'
 						sh 'echo ${BUILD_TIMESTAMP}'
 						sh "docker login -u ishana7 -p Bts@71611"
 						def customImage = docker.build("ishana7/swe_hw2:0.0.1:${BUILD_TIMESTAMP}")
