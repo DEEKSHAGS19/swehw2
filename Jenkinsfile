@@ -1,9 +1,5 @@
 pipeline {
 	agent any
-		environment {
-			DOCKERHUB_PASS = credentials('Bts@71611')
-		}
-		
 		stages {
 			stage("Building the student survey image") {
 				steps {
@@ -12,7 +8,7 @@ pipeline {
 						sh 'rm -rf *.war'
 						sh 'jar -cvf Ishana_SWE_HW1.war -C WebContent/ .'
 						sh 'echo ${BUILD_TIMESTAMP}'
-						sh "docker login -u ishana7 -p ${DOCKERHUB_PASS}"
+						sh "docker login -u ishana7 -p $ Bts@71611"
 						def customImage = docker.build("ishana7/swe_hw2:0.0.1:${BUILD_TIMESTAMP}")
 					}
 				}
