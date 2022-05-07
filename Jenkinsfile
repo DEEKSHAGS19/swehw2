@@ -1,7 +1,7 @@
 pipeline {
 	agent any
 		environment {
-			DOCKERHUB_PASS = credentials('docker-pass')
+			DOCKERHUB_PASS = credentials('Bts@71611')
 		}
 		
 		stages {
